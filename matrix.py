@@ -11,5 +11,9 @@ print(row_count)
 column_count = len(myMatrix[0])
 print(column_count)
 
+# single item retreival
+print(myMatrix[0][2])
+print(myMatrix[1][1])
+
 
 
