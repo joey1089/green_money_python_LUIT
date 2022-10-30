@@ -17,5 +17,5 @@ aws_list_items.append('DocumentDB')
 print(f"AWS Service listed here is around {len(aws_list_items)} and they are \n {aws_list_items} ")
 # Removing Cloud9 and DocumentDB from the aws_list_items
 aws_list_items.pop(5)
-aws_list_items.pop(6)
+aws_list_items.pop(len(aws_list_items)-1) #using len(list)-1 to find the last element in the list.
 print(f"After removing few AWS Service, new list is around {len(aws_list_items)} and they are \n {aws_list_items} ")
