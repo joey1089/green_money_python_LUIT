@@ -1,4 +1,4 @@
-#Create a AWS Service Inventory
+#Create a AWS Service Inventory List
 # 1. The list should be empty initially.
 # 2. Populate the list using append or insert.
 # 3. Print the list and the length of the list.
