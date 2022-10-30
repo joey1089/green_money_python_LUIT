@@ -16,3 +16,11 @@
 # >>> print("My name is: %s %s" % ("First","Last")
 # ... )
 # My name is: First Last
+#Tuple should have a comma seperator
+tuplelist = (99.9, 100.1, 1.1)
+print(tuplelist) #o/p -> (99.9, 100.1, 1.1)
+tuplelist_add1 = tuplelist + (2.7,)
+print(tuplelist_add1) #o/p -> (99.9, 100.1, 1.1, 2.7)
+#common usage
+employee = ('ID1109','William Henry', 34, "Security Specialist")
+print(employee[1])
