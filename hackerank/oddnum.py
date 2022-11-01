@@ -10,3 +10,10 @@ elif n % 2 == 0 and n in range(6,20):
     print("Weird")
 elif n % 2 == 0 and n >= 20:
     print("Not Weird")
+
+#========================================= while loop testing =================================
+i = 0
+while i < n:
+    print(i*i)
+    i += 1
+
