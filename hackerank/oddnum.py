@@ -28,21 +28,23 @@ def count_oddnum(num):
     '''This fn prints out the odd numbers upto the given number.'''
     count = 0
     while count <= num:
-        if count % 2 == 0:
-            count += 1            
-        print(f"Odd Numbers : {count}")
+        if count % 2 == 0:                      
+            print(f"Odd Numbers : {count}")
         count += 1
 
 
 if __name__ == '__main__':
     n = int(input("Enter a number : ").strip())
-    strchoice = input("\n type (1)for weird number, (2)for square roots and (3) for Odd Numbers :")
-    if strchoice == '1':
-        weirdnumbers(n)
-    elif strchoice == '2':
-        square_root(n)
-    elif strchoice == '3':
-        count_oddnum(n)
+    if n >= 1:
+        strchoice = input("\n Type (1)for weird number, (2)for square roots and (3) for Odd Numbers :")
+        if strchoice == '1':
+            weirdnumbers(n)
+        elif strchoice == '2':
+            square_root(n)
+        elif strchoice == '3':
+            count_oddnum(n)
+        else:
+            print("\n Wrong choice try again !")
     else:
-        print("\n Wrong choice try again !")
+        print("Can't enter number less than 1")
         
