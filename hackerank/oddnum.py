@@ -1,6 +1,7 @@
 #!/bin/python3
 
 #======================================== weird numbers =======================================
+#This part of the code is for hackrank problem
 def weirdnumbers(num):
     '''Find a given number is weird or not'''
     if n % 2 != 0:
@@ -14,6 +15,7 @@ def weirdnumbers(num):
 
 
 #========================================= while loop testing =================================
+#This part of the code is for hackrank problem
 def square_root(num):
     '''This function prints out the square root upto the given number.'''
     i = 0
