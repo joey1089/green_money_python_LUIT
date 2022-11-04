@@ -1,20 +1,35 @@
 #!/usr/bin/python3.10
-if __name__ == '__main__':
-    dict_item = {}    
-    # for i in range(int(input())):
+# Find the second lowest score of the students
+if __name__ == '__main__':    
+    students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Zeb', 42.0]]
+    student_score = [37.21, 37.21, 37.2, 42.0]
+    # for _ in range(int(input())):
     #     name = input()
     #     score = float(input())
-    #     dict_item[name] = score
-    dict_item = {'Harry': 37.21, 'Berry': 37.21, 'Tina': 37.2, 'Akriti':41, 'Harsh':39}
+    #     students.append([name,score])        
+    # student_score.append(score)
+    print(students)
+    student_score = sorted(set(student_score))[1] # finds the 2nd sorted item
+
+    name =[ i[0] for i in students if student_score == i[1] ]   
+    print("Students with second Lowest scores : ","\n".join(sorted(name)))
+
+
+    # dict_item = {}    
+    # # for i in range(int(input())):
+    # #     name = input()
+    # #     score = float(input())
+    # #     dict_item[name] = score
+    # dict_item = {'Harry': 37.21, 'Berry': 37.21, 'Tina': 37.2, 'Akriti':41, 'Harsh':39}
         
-    new_dictlist = dict(dict_item.items()) # Convert tuple to dictionary
-    # print(new_dictlist)
-    sorteditems = sorted((value,key) for (key,value) in new_dictlist.items()) # creates tuples
-    for i in sorteditems:
-        if sorteditems[i] < sorteditems[i+1]:
-            print(sorteditems[i])
-        else:
-            pass
+    # new_dictlist = dict(dict_item.items()) # Convert tuple to dictionary
+    # # print(new_dictlist)
+    # sorteditems = sorted((value,key) for (key,value) in new_dictlist.items()) # creates tuples
+    # for i in sorteditems:
+    #     if sorteditems[i] < sorteditems[i+1]:
+    #         print(sorteditems[i])
+    #     else:
+    #         pass
 
     # print(sorteditems)
     # secondlowest = sorteditems[len(new_dictlist.items())-4]
@@ -31,12 +46,7 @@ if __name__ == '__main__':
     # print(list_values[2])
 
 
-
-
-
-
-
-    # print("Prints the Tuple list : ",new_alpha)    
+   # print("Prints the Tuple list : ",new_alpha)    
     # new_val = sorted(new_alpha) # sort the tuple list
     # sortedValues = sorted(newdict_list.items())
     # print(f"Sorted values : {sortedValues}")
