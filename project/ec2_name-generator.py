@@ -16,6 +16,7 @@ import random
 import os
 
 def clr_scrn():
+    '''This method clear the screen'''
     if os.name == 'posix':
         os.system('clear')
     else:
@@ -37,36 +38,38 @@ def generate_names(dept_names,num_of_ec2):
         convert_strec2 = dept_names+"_"+"".join(str_gen_names)
         str_list_names.append(convert_strec2.replace(" ",""))
         count += 1
-    return str_list_names
+    if (verify_names(str_list_names)):
+        return str_list_names
+    return "Generated Names are not unique, debug"
 
-def verify_names(generate_ec2_names):
+def verify_names(list_names):
     '''This method verifies all the generated ec2 names are unique'''
-    if len(set(generate_ec2_names)) == len(generate_ec2_names):
+    
+    if len(set(list_names)) == len(list_names):
         print("All the generated EC2 Instances names are unique !")
+        return True
     else:
-        print("Not all generated EC2 Instances names are unique !!!")
+        return "Not all generated EC2 Instances names are unique !!!"
 
 
 clr_scrn()
 letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-print("======================== EC2 Instances Name Generator =======================================")
+print("========================== EC2 Instances Name Generator =======================================")
 num_of_ec2 = int(input("How many EC2 instances are needed : "))
 dept_names = str(input("Choose your department type either - 'Marketing', 'Accounting' or 'Fin Ops' : ")).title()
-generate_ec2_names = generate_names(dept_names,num_of_ec2) 
- 
+#generate_ec2_names = generate_names(dept_names,num_of_ec2) 
 
 if dept_names == 'Marketing':      
-    print("\n Marketing Department EC2 Names : ",generate_names(dept_names,num_of_ec2) )
-    verify_names(generate_names(dept_names,num_of_ec2))
-   
+    print("Marketing Department EC2 Names : ",generate_names(dept_names,num_of_ec2) )
+       
 elif dept_names == 'Accounting':
-    print("\n Accounting Department EC2 Names : ",generate_names(dept_names,num_of_ec2) )
-    verify_names(generate_ec2_names)
+    print("Accounting Department EC2 Names : ",generate_names(dept_names,num_of_ec2) )
+    
   
 elif dept_names == 'Fin Ops':
-    print("\n FinOps Department EC2 Names :",generate_names(dept_names,num_of_ec2) )
-    verify_names(generate_ec2_names)
+    print("FinOps Department EC2 Names : ",generate_names(dept_names,num_of_ec2) )
+   
 
 else:
     print("You can't use Name Genertor for your department !")
