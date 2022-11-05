@@ -62,15 +62,10 @@ dept_names = str(input("Choose your department type either - 'Marketing', 'Accou
 
 if dept_names == 'Marketing':      
     print("Marketing Department EC2 Names : ",generate_names(dept_names,num_of_ec2) )
-       
 elif dept_names == 'Accounting':
     print("Accounting Department EC2 Names : ",generate_names(dept_names,num_of_ec2) )
-    
-  
 elif dept_names == 'Fin Ops':
     print("FinOps Department EC2 Names : ",generate_names(dept_names,num_of_ec2) )
-   
-
 else:
     print("You can't use Name Genertor for your department !")
 
