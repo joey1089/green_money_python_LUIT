@@ -22,7 +22,7 @@ from inspect import isgeneratorfunction
 assert isgeneratorfunction(
     char_range
 ), f"Expected char_range to be a generator function but was not."
-
+print(char_range)
 # Ensure that the result *does* includes the stop character
 assert list(char_range("a", "e")) == [
     "a",
@@ -31,7 +31,7 @@ assert list(char_range("a", "e")) == [
     "d",
     "e",
 ], f"Expected ['a', 'b', 'c', 'd', 'e'] but got {repr(list(char_range('a', 'e')))}"
-
+print(char_range("a","e"))
 # Iterate backwards if the start code point is higher than the stop code point
 
 assert list(char_range("e", "a")) == [
@@ -41,7 +41,7 @@ assert list(char_range("e", "a")) == [
     "b",
     "a",
 ], f"Expected ['e', 'd', 'c', 'b', 'a'] but got {repr(list(char_range('e', 'a')))}"
-
+print(char_range('e','a'))
 # Properly step if a step value is provided
 
 assert list(char_range("a", "e", 2)) == [
@@ -49,7 +49,7 @@ assert list(char_range("a", "e", 2)) == [
     "c",
     "e",
 ], f"Expected ['a', 'c', 'e'] but got {repr(list(char_range('a', 'e', 2)))}"
-
+print(char_range('a','e',2))
 # Step properly if the start code point is higher than the stop code point
 
 assert list(char_range("e", "a", 2)) == [
@@ -57,4 +57,5 @@ assert list(char_range("e", "a", 2)) == [
     "c",
     "a",
 ], f"Expected ['e', 'c', 'a'] but got {repr(list(char_range('e', 'a', 2)))}"
+print(char_range('e','a',2))
 
