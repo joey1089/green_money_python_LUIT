@@ -11,20 +11,19 @@ def clr_scrn():
         os.system('cls')
 
 def get_menu(no_ec2):
-    dept_names = str(input("Choose your department, type either - 'Marketing', 'Accounting' or 'Fin Ops' : ")).title()
-
-    if dept_names == 'Marketing':      
-        print("\nMarketing Department EC2 Names : ",generate_names(dept_names,no_ec2) )
-    elif dept_names == 'Accounting':
-        print("\nAccounting Department EC2 Names : ",generate_names(dept_names,no_ec2) )
-    elif dept_names == 'Fin Ops':
-        print("\nFinOps Department EC2 Names : ",generate_names(dept_names,no_ec2) )
+    '''This method  prints out the unique generated department EC2 instance names'''
+    choices = ['Marketing', 'Accounting','Finops']
+    dept_names = str(input("Choose your department, type either - 'Marketing', 'Accounting' or 'Finops' : "))
+    dept_name = dept_names.replace(" ","").title()
+    print(dept_name)
+    if dept_name in choices:      
+        print(f"\n{dept_name} Department EC2 Names : \n",generate_names(dept_name,no_ec2) )
     else:
-        print("You can't use Name Genertor for your department !")
+        print("\nYou can't use Name Genertor for your department !")
 
 
 def generate_names(dept_name,no_of_ec2):
-    '''This method prints the auto generates unique names of the given department'''
+    '''This method returns the auto generates unique EC2 instance names of the given department'''
     str_list_names = []
     getpwdgen = pwdgen()
     count = 0
@@ -36,7 +35,7 @@ def generate_names(dept_name,no_of_ec2):
         count += 1
     if (verify_names(str_list_names)):
         return str_list_names
-    return "Generated Names are not unique - its a Error in code !"
+    return "Generated Names are not unique - redo !"
 
 def verify_names(list_names):
     '''This method verifies all the generated ec2 names are unique'''    
