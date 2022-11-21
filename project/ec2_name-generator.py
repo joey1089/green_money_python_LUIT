@@ -25,10 +25,10 @@ def get_menu(no_ec2):
 def generate_names(dept_name,no_of_ec2):
     '''This method returns the auto generates unique EC2 instance names of the given department'''
     str_list_names = []
-    getpwdgen = pwdgen()
+    get_ec2name_gen = ec2name_gen()
     count = 0
     while count != no_of_ec2:
-        gen_ec2_names = random.sample(getpwdgen,10)
+        gen_ec2_names = random.sample(get_ec2name_gen,10)
         str_gen_names = [str(i) for i in gen_ec2_names]
         convert_strec2 = dept_name+"_"+"".join(str_gen_names)
         str_list_names.append(convert_strec2.replace(" ",""))
@@ -45,16 +45,16 @@ def verify_names(list_names):
     else:
         return "Not all generated EC2 Instances names are unique !!!"
 
-def pwdgen():
+def ec2name_gen():
     '''This method returns password combined with letters and numbers.'''
-    password_list = []
+    ec2name_gen_list = []
     letters = string.ascii_letters    
     numbers = string.digits
     for char in range(0,8):
-        password_list += random.choice(letters)
+        ec2name_gen_list += random.choice(letters)
     for char in range(0,8):
-        password_list += random.choice(numbers)
-    return password_list
+        ec2name_gen_list += random.choice(numbers)
+    return ec2name_gen_list
 
 clr_scrn()
 print("\n========================== EC2 Instances Name Generator =======================================\n")
