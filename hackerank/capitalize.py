@@ -13,9 +13,9 @@ def solve(s):
     # s1 = str(s1).capitalize()
     # s2 = str(s2).capitalize()
     # s = s1+" "+s2
-   
+    # return s
     return s.title()
     
 
-name = "henry ford"
+name = str(input("Enter your First Name and Last Name with Space in between each : "))
 print(solve(name))
