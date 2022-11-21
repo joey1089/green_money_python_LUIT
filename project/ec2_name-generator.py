@@ -48,11 +48,11 @@ def verify_names(list_names):
 def ec2name_gen():
     '''This method returns password combined with letters and numbers.'''
     ec2name_gen_list = []
-    letters = string.ascii_letters    
+    letters = string.ascii_letters  
     numbers = string.digits
-    for char in range(0,8):
+    for char in range(0,9):
         ec2name_gen_list += random.choice(letters)
-    for char in range(0,8):
+    for char in range(0,9):
         ec2name_gen_list += random.choice(numbers)
     return ec2name_gen_list
 
